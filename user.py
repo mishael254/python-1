@@ -13,5 +13,14 @@ class User:
     def delete_user(self):
         """
         a new method to delete users account
+        """
+        User.user_account.remove(self)
+
+    def __init__ (self,username,password):
+        self.username = username
+        self.password = password
         
+
+
+
 
