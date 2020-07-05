@@ -97,7 +97,7 @@ class User:
                    return new_password
 
     @classmethod 
-    def user_exist(cls,email):
+    def user_exist(cls,email): 
         '''
         Method that checks if a user exists from the user_account.
         Args:
