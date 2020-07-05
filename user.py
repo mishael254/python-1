@@ -74,7 +74,7 @@ class User:
         a new method to delete users account
         """
         User.user_credentials.remove(self)
-        def __init__ (self, first_name,last_name,number,email):
+        def __init__ (self, first_name,last_name,number,email): 
 
         self.first_name = first_name
         self.last_name = last_name
