@@ -111,7 +111,7 @@ class User:
         return False
 
     @classmethod
-    def display_user(cls):
+    def display_user(cls): 
        """
        method that returns a user_account
        """
