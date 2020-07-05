@@ -22,6 +22,15 @@ class User:
 
 
         @classmethod
+        def find_by_password(cls,password):
+          """
+          a method that takes in a password and returns an account that matches that password
+          arguments:=> 1 password ;this is a login password to search for an acount
+          (2); returns the account  information for the found password
+
+
+
+          """
 
 
 
