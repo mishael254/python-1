@@ -20,18 +20,18 @@ class TestUser(unittest.TestCase):
         '''
         
 
-        self.assertEqual(self.new_contact.first_name,"James")
-        self.assertEqual(self.new_contact.last_name,"Muriuki")
-        self.assertEqual(self.new_contact.phone_number,"0712345678")
-        self.assertEqual(self.new_contact.email,"james@ms.com")
-        self.new_contact.save_contact() # saving the new contact
-        self.assertEqual(len(Contact.contact_list),1)#here we check the length of the contact list to confirm an addition has been made
+        self.assertEqual(self.new_user.first_name,"James")
+        self.assertEqual(self.new_user.last_name,"Muriuki")
+        
+        self.assertEqual(self.new_user.email,"james@ms.com")
+        self.new_user.save_user() # saving the new contact
+        self.assertEqual(len(User.contact_list),1)#here we check the length of the contact list to confirm an addition has been made
 
      def tearDown(self):
             """
             this is a teardown method that basically cleans up after each test case has been run
             """
-            Contact.contact_list = []
+            User.user_account = []
 
      def test_save_multiple_users(self):
           """
