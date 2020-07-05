@@ -20,7 +20,7 @@ class TestUser(unittest.TestCase):
         '''
         
 
-        self.assertEqual(self.new_user.first_name,"James")
+        self.assertEqual(self.new_user.first_name,"James") 
         self.assertEqual(self.new_user.last_name,"Muriuki")
         
         self.assertEqual(self.new_user.email,"james@ms.com")
@@ -39,50 +39,50 @@ class TestUser(unittest.TestCase):
           objects to our contact list
 
           """
-          self.new_contact.save_contact()
-          test_contact = Contact("Test","user","0712345678","testuser@yahoo.com") #new contact
-          test_contact.save_contact()
-          self.assertEqual(len(Contact.contact_list),2)
+          self.new_user.save_user()
+          test_user = User("Test","user","testuser@yahoo.com") #new contact
+          test_user.save_user()
+          self.assertEqual(len(User.user_account),2)
           #we want now to make a test to delete the contact saved
      def test_delete_user(self):
            """
           this test_delete_contact is to test if we can delete a contact from our contact list
            """
-           self.new_contact.save_contact()
-           test_contact = Contact("Test","user","0712345678","testuser@yahoo.com")#new contact
-           test_contact.save_contact()
+           self.new_user.save_user()
+           test_user = User("Test","user","testuser@yahoo.com")#new contact
+           test_user.save_user()
 
-           self.new_contact.delete_contact()#deleting a new contact object
-           self.assertEqual(len(Contact.contact_list),1)
+           self.new_user.delete_user()#deleting a new contact object
+           self.assertEqual(len(User.user_account),1)
 
      def test_find_user_by_password(self):
           """
           test to find whether we can find a contact by number and display information
           """
-          self.new_contact.save_contact()
-          test_contact = Contact("Test","user","0711223344","testuser@yahoo.com")
-          test_contact.save_contact()
+          self.new_user.save_user()
+          test_user = User("Test","user","testuser@yahoo.com")
+          test_user.save_user()
 
-          found_contact = Contact.find_by_number("0711223344")
-          self.assertEqual(found_contact.email,test_contact.email)
+          found_user = User.find_by_email("testUser@yahoo.com")
+          self.assertEqual(found_user.password,test_user.password)
 
      def test_user_exists(self):
           """
           test to check if we can return a boolean if the contact does not exist
           """
-          self.new_contact.save_contact()
-          test_contact = Contact("Test","user","0711223344","testuser@yahoo.com")
-          test_contact.save_contact()
+          self.new_user.save_user()
+          test_user = User("Test","user","testuser@yahoo.com")
+          test_user.save_user()
          
-          contact_exists = Contact.contact_exist("0711223344")
+          user_exists = User.user_exist("0711223344")
 
-          self.assertTrue(contact_exists)
+          self.assertTrue(user_exists)
 
      def test_display_all_(self):
           """
           a test that returns a list of all contacts saved
           """
-          self.assertEqual(Contact.display_contacts(),Contact.contact_list)
+          self.assertEqual(User.display_user(),User.user_account)
 
           
           
