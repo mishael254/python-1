@@ -57,15 +57,65 @@ class User:
        return cls.user_account
 
 
-       
+
    class Credentials:
 
-    def __init__ (self, first_name,last_name,number,email):
+    
+
+     user_credentials = [] 
+     def save_user(self):
+        """
+        new method to save the users username and password
+        """
+        User.user_credentials.append(self)
+
+    def delete_user(self):
+        """
+        a new method to delete users account
+        """
+        User.user_credentials.remove(self)
+        def __init__ (self, first_name,last_name,number,email):
 
         self.first_name = first_name
         self.last_name = last_name
-        self.phone_number = number
         self.email = email
+
+    
+
+        @classmethod
+        def find_by_email(cls,email):
+          """
+          a method that takes in a password and returns an account that matches that password
+          arguments:=> 1 password ;this is a login password to search for an acount
+          (2); returns the account  information for the found password
+
+
+
+          """
+          for user in cls.user_credentials:
+              if user.email == password:
+                   return user
+
+    @classmethod 
+    def user_exist(cls,email):
+        '''
+        Method that checks if a user exists from the user_account.
+        Args:
+            password: password to search if it exists
+        Returns :
+            Boolean: True or false depending if the user exists
+        '''
+        for user in cls.user_credentials:
+          if user.email == password:
+              return True
+        return False
+
+    @classmethod
+    def display_user(cls):
+       """
+       method that returns a user_account
+       """
+       return cls.user_credentials
 
 
 
