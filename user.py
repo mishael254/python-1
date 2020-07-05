@@ -82,7 +82,7 @@ class User:
 
     
 
-        @classmethod
+        @classmethod 
         def find_by_email(cls,email):
           """
           a method that takes in a password and returns an account that matches that password
@@ -93,8 +93,8 @@ class User:
 
           """
           for user in cls.user_credentials:
-              if user.email == password:
-                   return user
+              if user.email == email:
+                   return new_password
 
     @classmethod 
     def user_exist(cls,email):
