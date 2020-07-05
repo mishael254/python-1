@@ -6,7 +6,7 @@ class TestUser(unittest.TestCase):
         '''
         Set up method to run before each test cases.
         '''
-        self.new_contact = User("James","Muriuki","0712345678","james@ms.com") # create contact object
+        self.new_user = User("James","Muriuki","james@ms.com") # create contact object
 
 
      def test_init(self):
