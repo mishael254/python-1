@@ -63,7 +63,7 @@ class User:
     
 
      user_credentials = [] 
-     def save_user(self):
+     def save_user(self): 
         """
         new method to save the users username and password
         """
