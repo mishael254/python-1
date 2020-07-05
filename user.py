@@ -69,7 +69,7 @@ class User:
         """
         User.user_credentials.append(self)
 
-    def delete_user(self):
+    def delete_user(self): 
         """
         a new method to delete users account
         """
