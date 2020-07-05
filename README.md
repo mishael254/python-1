@@ -9,7 +9,7 @@
 ## Known Bugs
 {no issues or known bugs however if found one feel free to report}
 ## Technologies Used
-{languages used are HTML languages
+{languages used is python
 and ATOM software}
 {use of python libraries}
 ## Support and contact details
