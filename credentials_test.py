@@ -13,7 +13,7 @@ class TestContact(unittest.TestCase):
         '''
         Set up method to run before each test cases.
         '''
-        self.new_credentials = Credentials("Andrew","Twitter","001") 
+        self.new_credentials = Credentials("Mishael","Twitter","001") 
 
 
     def test_init(self):
@@ -21,7 +21,7 @@ class TestContact(unittest.TestCase):
         test_init test case to test if the object is initialized properly
         '''
 
-        self.assertEqual(self.new_credentials.username_name,"Andrew")
+        self.assertEqual(self.new_credentials.username_name,"Mishael")
         self.assertEqual(self.new_credentials.account_name,"Twitter")
         self.assertEqual(self.new_credentials.account_password,"001")
 
@@ -45,7 +45,7 @@ class TestContact(unittest.TestCase):
             objects to our credentials_list
             '''
             self.new_credentials.save_credentials()
-            test_credentials = Credentials("Drew","Instagram","789") 
+            test_credentials = Credentials("Ndegwa","Instagram","789") 
             test_credentials.save_credentials()
             self.assertEqual(len(Credentials.credentials_list),2)
 
@@ -54,7 +54,7 @@ class TestContact(unittest.TestCase):
             test_delete_credentials to test if we can remove a credentials from our credentials list
             '''
             self.new_credentials.save_credentials()
-            test_credentials = Credentials("Drew","Instagram","789") 
+            test_credentials = Credentials("Ndegwa","Instagram","789") 
             test_credentials.save_credentials()
 
             self.new_credentials.delete_credentials()
