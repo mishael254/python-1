@@ -1,128 +1,46 @@
 class User:
     """
-    a class that generates a new user password account after providing a username and a password
+    Class that generates new instances of users.
     """
-    user_account = []# create an empty user_account
+
+    user_list = [] # Empty contact list
+
+    def __init__(self,login_username,password,):
+
+      # docstring removed for simplicity
+
+        self.login_username = login_username
+        self.password= password
 
     def save_user(self):
-        """
-        new method to save the users username and password
-        """
-        User.user_account.append(self)
+
+        '''
+        save_user method saves user objects into user_list
+        '''
+
+        User.user_list.append(self) 
 
     def delete_user(self):
-        """
-        a new method to delete users account
-        """
-        User.user_account.remove(self)
 
-    def __init__ (self,username,password):
-        self.username = username
-        self.password = password
-
-
-        @classmethod
-        def find_by_password(cls,password):
-          """
-          a method that takes in a password and returns an account that matches that password
-          arguments:=> 1 password ;this is a login password to search for an acount
-          (2); returns the account  information for the found password
-
-
-
-          """
-          for user in cls.user_account:
-              if user.password == password:
-                   return user
-
-    @classmethod 
-    def user_exist(cls,password):
         '''
-        Method that checks if a user exists from the user_account.
-        Args:
-            password: password to search if it exists
-        Returns :
-            Boolean: True or false depending if the user exists
+        delete_user method deletes a saved user from the user_list
         '''
-        for user in cls.user_account:
-          if user.password == password:
-              return True
-        return False
+
+        User.user_list.remove(self) 
 
     @classmethod
-    def display_user(cls):
-       """
-       method that returns a user_account
-       """
-       return cls.user_account
-
-
-
-   class Credentials:
-
-    
-
-     user_credentials = [] 
-     def save_user(self): 
-        """
-        new method to save the users username and password
-        """
-        User.user_credentials.append(self)
-
-    def delete_user(self): 
-        """
-        a new method to delete users account
-        """
-        User.user_credentials.remove(self)
-        def __init__ (self, first_name,last_name,number,email): 
-
-        self.first_name = first_name
-        self.last_name = last_name
-        self.email = email
-
-    
-
-        @classmethod 
-        def find_by_email(cls,email):
-          """
-          a method that takes in a password and returns an account that matches that password
-          arguments:=> 1 password ;this is a login password to search for an acount
-          (2); returns the account  information for the found password
-
-
-
-          """
-          for user in cls.user_credentials:
-              if user.email == email:
-                   return new_password
-
-    @classmethod 
-    def user_exist(cls,email): 
+    def validate_user(cls,login_username,password):
         '''
-        Method that checks if a user exists from the user_account.
+        Method that takes in login_username and password
         Args:
-            password: password to search if it exists
+            login_username : name
+            password :password
         Returns :
-            Boolean: True or false depending if the user exists
+            password.
         '''
-        for user in cls.user_credentials:
-          if user.email == password:
-              return True
-        return False
 
-    @classmethod
-    def display_user(cls): 
-       """
-       method that returns a user_account
-       """
-       return cls.user_credentials
+        for user in cls.user_list:
+            if user.login_username == login_username and user.password == password:
+                return password          
 
-
-
-
-
-
-
-
-
-
+          
